@@ -1,7 +1,7 @@
 class LangTopicsController < ApplicationController
 
     def index
-        @lang_topics = LangTopics.all 
+        @lang_topics = LangTopic.all
     end
-    
+
 end

@@ -13,4 +13,10 @@ class LangTopic < ApplicationRecord
     def display_lt
         self.language.name.to_s + " - " + self.topic.title.to_s
     end
+
+
+    def self.sorted_list
+        all.sort {|a, b| a.display_lt <=> b.display_lt}
+    end
+
 end

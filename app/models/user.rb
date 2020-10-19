@@ -8,4 +8,6 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :password, presence: true
     validates :bio, length: { minimum: 20 }
+
+
 end
