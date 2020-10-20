@@ -1,0 +1,7 @@
+<h1>Programming Languages</h1>
+
+<ul>
+    <% @languages.sorted_list.each do |lang|%>
+        <li><%= link_to lang.name, language_path(lang) %></li>
+    <% end %>
+</ul>

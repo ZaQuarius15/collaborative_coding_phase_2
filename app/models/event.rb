@@ -2,6 +2,7 @@ class Event < ApplicationRecord
     belongs_to :host, :class_name => :User
     belongs_to :lang_topic
     has_many :participants, :class_name => :User
+    attr_reader :language, :topic
 
     after_save :set_host 
     before_destroy :remove_as_host 
@@ -18,4 +19,12 @@ class Event < ApplicationRecord
         end
       end
 
+
+    def language
+        self.lang_topic.language
+    end
+
+    def topic
+        self.lang_topic.topic
+    end
 end
