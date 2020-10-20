@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  match '/app/github/callback', to: 'sessions#create', via: [:get, :post] 
+  # match '/app/github/callback', to: 'sessions#create', via: [:get, :post] 
 
   resources :lang_topics,  only: [:new, :create]
   resources :user_events,  only: [:new, :create]

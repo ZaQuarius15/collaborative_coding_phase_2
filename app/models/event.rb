@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
-    belongs_to :host, :class_name => "User"
+    belongs_to :host, :class_name => :User
     belongs_to :lang_topic
-    has_many :participants, :class_name => "User", :through => :user_events
+    has_many :participants, :class_name => :User
 
     after_save :set_host 
     before_destroy :remove_as_host 
