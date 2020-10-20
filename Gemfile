@@ -54,3 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'dotenv-rails', groups: [:development, :test]
