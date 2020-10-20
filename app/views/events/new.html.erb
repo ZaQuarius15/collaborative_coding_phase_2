@@ -1,19 +1,31 @@
-<h1>Create a New Event!</h1>
-
-<h4><em>Ready to host an event of your own? That's right you are!</em></h4>
-
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
         <p style="color:red"><%= error %></p>
     <% end %>
 <% end %>
 
+<h3><em>Ready to host an event of your own? That's right you are!</em></h3>
+
 <%= form_for @event do |f| %>
-    <%= f.label :language %>
-    <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %>
+
+  <fieldset>
+    <legend>Create a New Event</legend>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :topic %>
+    <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %><br><br>
+
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.label :time %>
+    <%= f.time_select :time, {minute_step: 15} %><br><br>
 
 
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
 
 <% end %>
 
+</fieldset>
