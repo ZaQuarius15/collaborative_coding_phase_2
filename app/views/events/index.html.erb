@@ -1,4 +1,8 @@
-<h1>All Events</h1>
+<% if @lang %>
+    <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
+<% else    %>
+    <h1>All Events</h1>
+<% end %>
 
 <ul>
     <% @events.each do |event|%>
