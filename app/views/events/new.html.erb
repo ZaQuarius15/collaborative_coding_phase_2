@@ -1,35 +1,35 @@
+<body class="container events"> 
+
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-        <p style="color:red"><%= error %></p>
+        <p style="color:red;"><%= error %></p>
     <% end %>
 <% end %>
 
-<h3><em>Ready to host an event of your own?</em></h3>
+<h3 style="color:white;text-shadow: 2px 2px #000;"><em>Ready to host an event of your own?</em></h3>
+
 
 <div class = "form">
 
 <%= form_for @event do |f| %>
 
-  <fieldset style="background-color:lightblue;text-align:center;">
-    <h2>Create a New Event</h2>
 
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <h2 style="color:white;text-shadow: 2px 2px #000;" >List Your Meetup</h2><br>
 
-    <%= f.label :topic %>
+    <%= f.text_field :title, placeholder: 'Enter Title' %><br><br>
+
     <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %><br><br><br>
 
-    <%= f.label :date %>
-    <%= f.date_field :date %>
+    <%= f.date_field :date %><br><br>
 
-    <%= f.label :time %>
-    <%= f.time_select :time, {minute_step: 15} %><br><br>
+    <%= f.time_select :time, {discard_minute: true, ampm: true} %><br><br><br></p>
 
 
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Create Event' %><br><br>
 
 <% end %>
 
-</fieldset>
 
 <div class = "form">
+
+</body>

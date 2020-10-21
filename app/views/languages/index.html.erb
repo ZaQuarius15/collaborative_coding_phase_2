@@ -1,7 +1,11 @@
-<h1>Programming Languages</h1>
+<body class="container languages"> 
+
+<h1>Programming Languages</h1> 
 
 <ul>
     <% @languages.sorted_list.each do |lang|%>
-        <li><%= link_to lang.name, language_path(lang) %></li>
+        <li><%= link_to lang.name, language_path(lang) %></li><br>
     <% end %>
 </ul>
+
+</body>

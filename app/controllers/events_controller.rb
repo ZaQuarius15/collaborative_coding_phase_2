@@ -1,10 +1,6 @@
 class EventsController < ApplicationController
-
-    # before_action :require_logged_in
-    # skip_before_action :require_logged_in, only: [:create]
      
     def index
-
         if params[:topic]
             @events = Event.all.select do |e|
                 if e.language = params[:language] 
@@ -36,6 +32,7 @@ class EventsController < ApplicationController
             redirect_to new_event_path
         end
     end
+
 
     private
 

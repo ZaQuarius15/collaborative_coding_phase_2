@@ -14,9 +14,13 @@
  *= require_self
  */
 
+body{
+    background-color: aliceblue;
+}
+
  h1, h2, h3 {
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-     font-size: xx-large;
+     font-size: xxx-large;
      text-align: center;
  }
 
@@ -28,3 +32,21 @@
      font-family: Verdana, Geneva, Tahoma, sans-serif;
      text-align: center;
  }
+
+ a {
+     font-size: xx-large;
+     font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: beige;    
+    text-shadow: 2px 2px  darkolivegreen;
+}
+  
+  /* mouse over link */
+  a:hover {
+    color: chocolate;
+  }
+  
+ ul {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+

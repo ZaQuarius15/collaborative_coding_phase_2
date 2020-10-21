@@ -1,7 +1,7 @@
 <h2> Dashboard </h2>
 
 
-<h3>Hi, <%= session[:name] %>.</h3>
+<h3>Hi, <%= current_user[:name] %>.</h3>
 
 <%= link_to 'View Events', :controller => "events", :action => "index"%><br>
 

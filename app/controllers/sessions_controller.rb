@@ -4,13 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if !params[:name] || params[:name].empty?
-      flash[:error] = "Unsuccessful login. Please, try again."
-      redirect_to(controller: 'sessions', action: 'new') 
-    else user = User.find_by(:name => params[:name])
-    session[:user_id] = user.id
-      # #session should link with existing user
-        redirect_to(controller: 'welecome', action: 'home')
+    user = User.all.find_by(:name => params[:name])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to controller: 'welcome', action: 'home'
+    else flash[:error] = "Unsuccessful login. Please, try again."
+      render 'sessions/new'
     end
   end
 

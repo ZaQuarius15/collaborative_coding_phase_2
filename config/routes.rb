@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show, :new, :create, :delete]
   resources :topics, only: [:show, :new, :create]
   resources :languages, only: [:index, :show]
-  resources :users,  only: [:new, :create, :delete, :update]
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,3 +1,29 @@
 // Place all the styles related to the Languages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+body.languages {
+    background-image: image-url('study.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: x-large;
+  }
+
+h1 {
+  color:beige;text-shadow: 2px 2px darkolivegreen; 
+  text-align: center; 
+  margin-top:250px;
+}
+
+ul {
+  column-count: 5;
+  text-align: center;
+  gap: none;
+    list-style-type:none; 
+    margin-top: 200px;
+}
+
+div.language_show {
+  background-color: olive;
+}
