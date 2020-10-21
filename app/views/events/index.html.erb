@@ -1,7 +1,11 @@
-<% if @lang %>
+<% if @topic %>
     <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
-<% else    %>
-    <h1>All Events</h1>
+    <%= image_tag @lang.img_url, :size => "180x180" %>
+<% elsif @lang %>
+    <h1>Upcoming <%= @lang.name %> Events</h1>
+    <%= image_tag @lang.img_url, :size => "180x180" %>
+<% else %>
+    <h1>Upcoming Events</h1>
 <% end %>
 
 <ul>
