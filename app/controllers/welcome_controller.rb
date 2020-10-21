@@ -1,4 +1,7 @@
 class WelcomeController < ApplicationController
-    def home
-    end
+  
+  def home
+    raise session[:user_id].inspect
+  end
+
 end

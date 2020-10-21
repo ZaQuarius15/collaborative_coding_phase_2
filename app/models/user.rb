@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
     validates :name, presence: true
     validates :password, presence: true
-    validates :bio, length: { minimum: 20 }
+    validates :bio, presence: true
 
     # devise :rememberable, :omniauthable, omniauth_providers: [:google_oauth2]
 

@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
+
+    # before_action :require_logged_in
+    # skip_before_action :require_logged_in, only: [:create]
      
     def index
+
         if params[:topic]
             @events = Event.all.select do |e|
                 if e.language = params[:language] 
@@ -24,11 +28,11 @@ class EventsController < ApplicationController
     end
 
     def create
-        event = Event.create(event_params)
-        if event.save
-            redirect_to events_path
+        @event = Event.new(event_params)
+        if @event.save
+            redirect_to events_path(@event)
         elsif  
-            flash[:errors] = event.errors.full_messages
+            flash[:errors] = @event.errors.full_messages
             redirect_to new_event_path
         end
     end
@@ -36,7 +40,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:host_id, :lang_topic_id, :location, :date, :time)
+        params.require(:event).permit(:lang_topic_id, :location, :date, :time)
     end
 
 

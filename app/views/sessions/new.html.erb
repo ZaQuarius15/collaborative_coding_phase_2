@@ -1,0 +1,23 @@
+
+<h2>Sign-in</h2>
+
+<div class = "flash">
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <% end %>
+<% end %>
+
+</div>
+
+<div class = "form">
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+
+  <%= text_field_tag :name, "", :placeholder => "Name" %><br><br>
+  <%= text_field_tag :password, "", :placeholder => "Password" %><br><br>
+  <%=submit_tag value='Log-in'%>
+
+<% end %>
+
+<div class = "form">

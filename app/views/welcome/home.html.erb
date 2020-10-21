@@ -1,13 +1,10 @@
-<h2> Sign-in <h2>
+<h2> Dashboard </h2>
 
-<!-- <% if name = session[:name] %>
-  <p>Welcome <%= name -%>! We know who you are thanks to Omniauth!</p>
-  <p>You were authenticated by  <%= session[:omniauth_data]['provider'] %></p>
 
-  <pre>
-    <%= session[:omniauth_data] %>
-  </pre>
-<% else %>
-  <p>You are not signed in.</p>
-  <p><%= link_to 'Sign in with the GitHub', '/auth/github'%>.</p>
-<% end %> -->
+<h3>Hi, <%= session[:name] %>.</h3>
+
+<%= link_to 'View Events', :controller => "events", :action => "index"%><br>
+
+<%= link_to 'Create an Event', :controller => "events", :action => "new"%><br>
+
+<%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %><br>

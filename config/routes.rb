@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'welcome#home'
+  root 'sessions#new'
+
+  get 'welcome', to: 'welcome#home'
+
+  get 'sessions', to: 'sessions#destroy'
+
+  resources :sessions
 
   # match '/app/github/callback', to: 'sessions#create', via: [:get, :post] 
 
@@ -9,6 +15,6 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show, :new, :create, :delete]
   resources :topics, only: [:show, :new, :create]
   resources :languages, only: [:index, :show]
-  resources :users,  only: [:new, :create, :delete]
+  resources :users,  only: [:new, :create, :delete, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

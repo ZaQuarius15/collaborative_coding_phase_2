@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ h1, h2, h3 {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-size: xx-large;
+     text-align: center;
+ }
+
+ .flash {
+     color :red;
+ }
+
+ .form {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     text-align: center;
+ }

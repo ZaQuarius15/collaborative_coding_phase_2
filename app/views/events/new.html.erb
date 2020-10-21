@@ -4,18 +4,20 @@
     <% end %>
 <% end %>
 
-<h3><em>Ready to host an event of your own? That's right you are!</em></h3>
+<h3><em>Ready to host an event of your own?</em></h3>
+
+<div class = "form">
 
 <%= form_for @event do |f| %>
 
-  <fieldset>
-    <legend>Create a New Event</legend>
+  <fieldset style="background-color:lightblue;text-align:center;">
+    <h2>Create a New Event</h2>
 
     <%= f.label :title %>
     <%= f.text_field :title %>
 
     <%= f.label :topic %>
-    <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %><br><br>
+    <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %><br><br><br>
 
     <%= f.label :date %>
     <%= f.date_field :date %>
@@ -29,3 +31,5 @@
 <% end %>
 
 </fieldset>
+
+<div class = "form">
