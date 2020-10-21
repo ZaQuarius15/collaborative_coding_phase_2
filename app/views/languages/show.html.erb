@@ -1,12 +1,18 @@
-<h1><%= @language.name %></h1>
+<body class="show-lang">
+
 
 <%= image_tag @language.img_url, :size => "180x180" %>
 
-<h3><%= @language.description %></h3>
+<h3 style="text-align:right; margin-right: 20px;"><%= @language.description %></h3>
 
-<h4><%= @language.name %> Topics:</h4>
+
 <uL>
     <% @language.topics.each do |topic| %>
         <%= link_to topic.title, events_path(:language => @language, :topic => topic) %><br>
     <% end %>
 </ul>
+
+<br><br>
+<h2 style="text-align: center;"><%= link_to "#{@language.name} Events", events_path(:language => @language) %></h2>
+
+<body>

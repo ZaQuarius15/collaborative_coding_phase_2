@@ -1,13 +1,39 @@
-
-
-<% if @lang %>
+<% if @topic %>
     <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
-<% else    %>
-    <h1>All Events</h1>
+    <%= image_tag @lang.img_url, :size => "180x180" %>
+<% elsif @lang %>
+    <h1>Upcoming <%= @lang.name %> Events</h1>
+    <%= image_tag @lang.img_url, :size => "180x180" %>
+<% else %>
+    <h1>Upcoming Events</h1>
 <% end %>
-
-<ul>
-    <% @events.each do |event|%>
-        <li><%= event.title %></li>
-    <% end %>
-</ul>
+<% if @topic %>
+    <ul>
+        <% @events.each do |event|%>
+            <li><%= event.title %><br>
+            Location: <%= event.location %><br>
+            Date: <%= event.date %> Time: <%= event.time %> 
+            </li><br>
+        <% end %>
+    </ul>
+<% elsif @lang %>
+    <ul>
+        <% @events.each do |event|%>
+            <li><%= event.title %> - <%= event.topic.title %><br>
+                Location: <%= event.location %><br>
+                Date: <%= event.date %> Time: <%= event.time %>
+            </li><br>
+        <% end %>
+    </ul>
+<% else %>
+    <ol>
+        <% @events.each do |event|%>
+            <li><%= event.title %> - <%= event.language.name %> - <%= event.topic.title %><br>
+                Location: <%= event.location %><br>
+                Date: <%= event.date %><br> 
+                Time: <%= event.time %><br>
+                <%= image_tag event.language.img_url, :size => "30x30" %>
+            </li><br>
+        <% end %>
+    </ol>
+<% end %>

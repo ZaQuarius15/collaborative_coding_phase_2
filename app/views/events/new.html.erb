@@ -1,13 +1,12 @@
 <body class="container events"> 
 
+<h3 style="color:white;text-shadow: 2px 2px #000;"><em>Ready to host an event of your own?</em></h3>
+
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
         <p style="color:red;"><%= error %></p>
     <% end %>
 <% end %>
-
-<h3 style="color:white;text-shadow: 2px 2px #000;"><em>Ready to host an event of your own?</em></h3>
-
 
 <div class = "form">
 
@@ -19,6 +18,8 @@
     <%= f.text_field :title, placeholder: 'Enter Title' %><br><br>
 
     <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %><br><br><br>
+
+    <%= f.text_field :location, placeholder: 'Location' %><br><br>
 
     <%= f.date_field :date %><br><br>
 

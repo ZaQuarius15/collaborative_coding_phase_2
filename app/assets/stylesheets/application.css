@@ -21,7 +21,6 @@ body{
  h1, h2, h3 {
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
      font-size: xxx-large;
-     text-align: center;
  }
 
  .flash {
@@ -37,8 +36,8 @@ body{
      font-size: xx-large;
      font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: beige;    
-    text-shadow: 2px 2px  darkolivegreen;
+    color: darkolivegreen;    
+    text-shadow: 2px 2px  beige;
 }
   
   /* mouse over link */
@@ -49,4 +48,3 @@ body{
  ul {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-
