@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'sessions', to: 'sessions#destroy'
 
+  put 'event/:id/join', to: 'events#join', as: 'join'
+
   resources :sessions
 
   # match '/app/github/callback', to: 'sessions#create', via: [:get, :post] 

@@ -7,33 +7,36 @@
 <% else %>
     <h1>Upcoming Events</h1>
 <% end %>
+
 <% if @topic %>
-    <ul>
+    <ol>
         <% @events.each do |event|%>
-            <li><%= event.title %><br>
-            Location: <%= event.location %><br>
-            Date: <%= event.date %> Time: <%= event.time %> 
-            </li><br>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>
+            <dt>Location: <%= event.location %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.display_time %></dt>
+            </dl><br>
         <% end %>
-    </ul>
+    </ol>
 <% elsif @lang %>
-    <ul>
+    <ol>
         <% @events.each do |event|%>
-            <li><%= event.title %> - <%= event.topic.title %><br>
-                Location: <%= event.location %><br>
-                Date: <%= event.date %> Time: <%= event.time %>
-            </li><br>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>
+            <dt><%= event.topic.title %></dt>
+            <dt>Location: <%= event.location %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.display_time %></dt>
+            </dl><br>
         <% end %>
-    </ul>
+    </ol>
 <% else %>
     <ol>
         <% @events.each do |event|%>
-            <li><%= event.title %> - <%= event.language.name %> - <%= event.topic.title %><br>
-                Location: <%= event.location %><br>
-                Date: <%= event.date %><br> 
-                Time: <%= event.time %><br>
-                <%= image_tag event.language.img_url, :size => "30x30" %>
-            </li><br>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>  
+                <dt><%= event.language.name %> - <%= event.topic.title %></dt>
+                <dt>Location: <%= event.location %></dt>
+                <dt>Date: <%= event.display_date %></dt> 
+                <dt>Time: <%= event.display_time %></dt>
+                <dt><%= image_tag event.language.img_url, :size => "30x30" %></dt>
+            </dl><br>
         <% end %>
     </ol>
 <% end %>

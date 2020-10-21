@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.all.find_by(:name => params[:name])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to controller: 'welcome', action: 'home'
-    else flash[:error] = "Unsuccessful login. Please, try again."
-      render 'sessions/new'
-    end
+      if user && user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect_to controller: 'welcome', action: 'home'
+      else flash[:errors] = ["Unsuccessful login. Please, try again."]
+        redirect_to '/'
+      end
   end
 
   def destroy
