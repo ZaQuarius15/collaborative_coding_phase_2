@@ -48,9 +48,6 @@ class EventsController < ApplicationController
         @user_event = UserEvent.create(:event_id => @event.id, :participant_id => current_user.id)
             if @user_event.save
                 current_user.user_events << @user_event
-                if @event.joins
-                    @event.joins += 1
-                end
                 redirect_to controller: 'welcome', action: 'home'
             else 
                 flash[:errors] = ["You've already registered for this event!"]

@@ -1,7 +1,8 @@
+<body class="sign-in">
 
-<h2>Sign-in</h2>
+<h1>Coding Collaboration</h1>
 
-<h3> -or- </h3>
+<h2 style="font-size:x-large">Sign-in</h2>
 
 <div class = "flash">
 
@@ -15,8 +16,6 @@
 
 <div class = "form">
 
-<%= link_to "create new profile", "/users/new" %><br><br>
-
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
 
   <%= text_field_tag :name, "", :placeholder => "Name" %><br><br>
@@ -25,4 +24,9 @@
 
 <% end %>
 
-<div class = "form">
+</div>
+
+<h4> -or- </h4>
+<%= link_to "create new profile", "/users/new" %><br><br>
+
+</div>

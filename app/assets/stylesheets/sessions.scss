@@ -1,0 +1,27 @@
+body.sign-in {
+    background-image: image-url('teamwork.png');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom left;
+}
+
+.sign-in {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+.sign-in a {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+.sign-in h1{
+    margin-top: 5%;
+    margin-bottom: 3;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+    text-align: center;
+    color: black;
+}

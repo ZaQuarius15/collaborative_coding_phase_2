@@ -1,10 +1,67 @@
-<h2> Dashboard </h2>
+<body class="welcome">
+
+<div class="dashboard">
+
+<nav>
+
+<ul>
+
+<li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+<li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+<li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+
+</ul>
+
+</nav>
 
 
-<h3>Hi, <%= current_user[:name] %>.</h3>
 
-<%= link_to 'View Events', :controller => "events", :action => "index"%><br>
+<h3 style="margin-left:10%">Welcome back, <%= current_user[:name] %>!</h3>
 
-<%= link_to 'Create an Event', :controller => "events", :action => "new"%><br>
+<div class="column-wrapper">
 
-<%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %><br>
+<div class="row">
+
+<div class="columns">
+
+<div class="column1">
+
+<h4>You have <%= pluralize( current_user.events_attending.count, 'upcoming event') %>.</h4>
+
+<ul>
+    <% if current_user.events_attending.any? %>
+    <% current_user.events_attending.each do |ue| %>
+    <li><%= link_to ue.event.title, event_path(ue.event) %></li><br>
+    <% end %>
+    <% end %>
+</ul>
+
+</div>
+
+</div>
+
+<div class="column2">
+
+<h4>Currently hosting <%= pluralize( current_user.events_hosting.count, 'upcoming event') %>.</h4>
+
+<ul>
+    <% if current_user.events_hosting.any? %>
+    <% current_user.events_hosting.each do |event| %>
+    <li><%= link_to event.title, event_path(event) %></li><br>
+    <% end %>
+    <% end %>
+</ul>
+
+</div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+</body>

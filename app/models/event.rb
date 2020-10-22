@@ -3,11 +3,11 @@ class Event < ApplicationRecord
     belongs_to :lang_topic
     has_many :participants, :class_name => :User
     
-    attr_accessor :joins
     attr_reader :language, :topic
 
-    def event_joins
-        @joins ||= 0
+    def attendees_count
+        user_events = UserEvent.all.select {|ue| ue.event_id == self.id}
+        user_events.map {|event| event.participant_id}.count
     end
 
     def display_time

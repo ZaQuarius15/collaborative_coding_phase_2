@@ -17,7 +17,7 @@ h1 {
   margin-top: 350px;
 }
 
-ul {
+body.languages ul {
   column-count: 5;
   text-align: center;
   gap: none;
@@ -34,4 +34,11 @@ body.show-lang {
 body.show-lang img{
   overflow: auto;
   float: left;
+}
+
+.languages a {
+  font-weight: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ color: darkolivegreen;    
+ text-shadow: 2px 2px  beige;
 }

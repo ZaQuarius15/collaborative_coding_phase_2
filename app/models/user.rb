@@ -11,5 +11,12 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :bio, presence: true
 
+    def events_attending
+        UserEvent.all.select {|ue| ue.participant_id == self.id}
+    end
+
+    def events_hosting
+        Event.all.select {|e| e.host_id == self.id}
+    end
 
 end
