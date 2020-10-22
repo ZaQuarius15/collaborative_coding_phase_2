@@ -1,3 +1,5 @@
+<body class="container languages">
+
 <% if @topic %>
     <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
     <%= image_tag @lang.img_url, :size => "180x180" %>
@@ -11,32 +13,39 @@
 <% if @topic %>
     <ol>
         <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
             <dt>Location: <%= event.location %></dt>
-            <dt>Date: <%= event.display_date %> Time: <%= event.display_time %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
             </dl><br>
+        <% end %>
         <% end %>
     </ol>
 <% elsif @lang %>
     <ol>
         <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
             <dt><%= event.topic.title %></dt>
             <dt>Location: <%= event.location %></dt>
-            <dt>Date: <%= event.display_date %> Time: <%= event.display_time %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
             </dl><br>
+        <% end %>
         <% end %>
     </ol>
 <% else %>
     <ol>
         <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>  
                 <dt><%= event.language.name %> - <%= event.topic.title %></dt>
                 <dt>Location: <%= event.location %></dt>
-                <dt>Date: <%= event.display_date %></dt> 
-                <dt>Time: <%= event.display_time %></dt>
+                <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
                 <dt><%= image_tag event.language.img_url, :size => "30x30" %></dt>
             </dl><br>
         <% end %>
+        <% end %>
     </ol>
 <% end %>
+
+</body>

@@ -8,14 +8,33 @@
     <% end %>
 <% end %>
 
+<% if flash[:success] %>
+    <% flash[:success].each do |success| %>
+        <p style="color:green;"><%= success %></p>
+    <% end %>
+<% end %>
+
+
 <%= link_to @language.name, language_path(@language) %><br>
 
 <%= @topic.title %><br>
 <%= @event.display_date %><br>
-<%= @event.display_time %><br>
+<%= @event.time %><br>
 <%= @host.name %><br>
 
-<%= button_to 'join', join_path(@event), method:'put'%><br>
+<% if !current_user.events_hosting.include?(@event) %>
+  <%= button_to 'register', join_path(@event), method:'put'%><br>
+<% end %><br>
+
+<% if current_user.events_attending.include?(@user_event) %>
+  <%= button_to 'cancel registeration', cancel_join_path(@event), method:'delete'%><br>
+<% end %><br>
+
+<% if current_user.events_hosting.include?(@event) %>
+  <%= button_to "update event", edit_event_path, method:'get'%><br>
+  <%= button_to "delete event", {:controller => :user_event,
+      :action => 'destroy', :id => @event.id }, :method => :delete %>
+<% end %><br>
 
 There is <%= pluralize( @event.attendees_count, 'person') %> registered for this event!
 

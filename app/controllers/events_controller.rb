@@ -31,6 +31,7 @@ class EventsController < ApplicationController
     def new
         @event = Event.new
         @lang_topics = LangTopic.all
+        @times = Event.times
     end
 
     def create
@@ -43,6 +44,18 @@ class EventsController < ApplicationController
         end
     end
 
+    def edit
+        @event = Event.find(params[:id])
+    end
+
+    def update
+        @lang_topics = LangTopic.all
+        @event = Event.find(params[:id])
+        @event.update(event_params)
+        flash[:success] = ["#{@event.title} has been updated."]
+        redirect_to event_path(@event)
+    end
+
     def join
         @event = Event.find(params[:id])
         @user_event = UserEvent.create(:event_id => @event.id, :participant_id => current_user.id)
@@ -53,6 +66,20 @@ class EventsController < ApplicationController
                 flash[:errors] = ["You've already registered for this event!"]
                 redirect_to event_path
         end
+    end
+
+    def cancel_join
+        @event = Event.find(params[:id])
+        @user_event = UserEvent.find_by(event_id: @event.id)
+        current_user.user_events.delete_by(params[:event_id])
+        redirect_to controller:'welcome', action: 'home'
+    end
+
+    def destroy
+        @event = Event.find(params[:id])
+        @event.delete
+        flash[:notice] = ["#{@event.title} has been deleted."]
+        redirect_to controller: 'welcome', action: 'home'
     end
 
     private

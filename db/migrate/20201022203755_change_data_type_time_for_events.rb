@@ -1,5 +1,5 @@
 class ChangeDataTypeTimeForEvents < ActiveRecord::Migration[6.0]
   def change
-    change_column :events, :time, :time
+    change_column :events, :time, :string
   end
 end

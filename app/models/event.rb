@@ -5,23 +5,11 @@ class Event < ApplicationRecord
     
     attr_reader :language, :topic
 
+    @@times = ["12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "12:00 PM"]
+    
     def attendees_count
         user_events = UserEvent.all.select {|ue| ue.event_id == self.id}
         user_events.map {|event| event.participant_id}.count
-    end
-
-    def display_time
-        split_time = self.time.to_s.split
-        time = split_time[1].split(":")
-        if time[0].to_i <= 12  
-            time_hour = time[0].to_i
-            ap = "AM"
-        else
-            time_hour = time[0].to_i - 12
-            ap = "PM"
-        end
-        time_minutes = time[1].to_i
-        return "#{time_hour}:#{time_minutes} #{ap}"
     end
 
     def display_date
@@ -34,7 +22,7 @@ class Event < ApplicationRecord
 
 
     def self.sort_by_date
-        all.sort { |a,b| [a.date, a.time] <=> [b.date, b.time] }
+        all.sort { |a,b| [a.date, a.time.to_time] <=> [b.date, b.time.to_time] }
     end
 
     def language
@@ -44,4 +32,9 @@ class Event < ApplicationRecord
     def topic
         self.lang_topic.topic
     end
+
+    def self.times
+        @@times
+    end
+
 end

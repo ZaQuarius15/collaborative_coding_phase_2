@@ -8,13 +8,15 @@ Rails.application.routes.draw do
 
   put 'event/:id/join', to: 'events#join', as: 'join'
 
+  delete 'event/:id/cancel_join', to: 'events#cancel_join', as: 'cancel_join'
+
   resources :sessions
 
   # match '/app/github/callback', to: 'sessions#create', via: [:get, :post] 
 
   resources :lang_topics,  only: [:new, :create]
   resources :user_events,  only: [:new, :create]
-  resources :events, only: [:index, :show, :new, :create, :delete]
+  resources :events
   resources :topics, only: [:show, :new, :create]
   resources :languages, only: [:index, :show]
   resources :users

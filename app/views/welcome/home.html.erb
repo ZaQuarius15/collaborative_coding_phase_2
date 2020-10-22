@@ -16,7 +16,11 @@
 
 </nav>
 
-
+<% if flash[:notice] %>
+    <% flash[:notice].each do |notice| %>
+        <p style="color:red;"><%= notice %></p>
+    <% end %>
+<% end %>
 
 <h3 style="margin-left:10%">Welcome back, <%= current_user[:name] %>!</h3>
 

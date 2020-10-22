@@ -23,7 +23,7 @@
 
     <%= f.date_field :date %><br><br>
 
-    <%= f.time_select :time, {discard_minute: true, ampm: true} %><br><br><br></p>
+    <%= f.select :time, options_for_select(@times) %><br><br><br></p>>
 
 
     <%= f.submit 'Create Event' %><br><br>
