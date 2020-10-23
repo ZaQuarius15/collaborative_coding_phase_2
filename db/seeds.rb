@@ -350,12 +350,3 @@ LangTopic.create(language_id: lang15.id, topic_id: topic23.id)
 LangTopic.create(language_id: lang15.id, topic_id: topic24.id)
 LangTopic.create(language_id: lang15.id, topic_id: topic25.id)
 LangTopic.create(language_id: lang15.id, topic_id: topic26.id)
-
-
-15.times do
-    User.create(
-name: Faker::Name.unique.name,
-password: Faker::String,
-bio: Faker::Lorem.paragraph_by_chars(number: 35)
-    )
-end

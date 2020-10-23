@@ -27,13 +27,14 @@
 <% end %><br>
 
 <% if current_user.events_attending.include?(@user_event) %>
-  <%= button_to 'cancel registeration', cancel_join_path(@event), method:'delete'%><br>
+    <%= button_to 'cancel registeration', cancel_join_path(@event), method:'delete'%><br>
 <% end %><br>
 
 <% if current_user.events_hosting.include?(@event) %>
   <%= button_to "update event", edit_event_path, method:'get'%><br>
-  <%= button_to "delete event", {:controller => :user_event,
+  <%= button_to "delete", {:controller => :events,
       :action => 'destroy', :id => @event.id }, :method => :delete %>
+
 <% end %><br>
 
 There is <%= pluralize( @event.attendees_count, 'person') %> registered for this event!

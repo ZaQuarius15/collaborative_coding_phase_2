@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # match '/app/github/callback', to: 'sessions#create', via: [:get, :post] 
 
   resources :lang_topics,  only: [:new, :create]
-  resources :user_events,  only: [:new, :create]
+  resources :user_events,  only: [:new, :create, :destroy]
   resources :events
   resources :topics, only: [:show, :new, :create]
   resources :languages, only: [:index, :show]

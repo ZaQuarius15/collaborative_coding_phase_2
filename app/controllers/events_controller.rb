@@ -26,6 +26,7 @@ class EventsController < ApplicationController
         @language = @event.language
         @topic = @event.topic
         @host = User.find(@event.host_id)
+        @user_event = UserEvent.find_by(event_id: params[:id])
     end
 
     def new
