@@ -16,20 +16,18 @@
 
     </nav>
 
-<body class="languages">
+<body class="container languages">
 
 <% if @topic %>
     <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
-    <%= image_tag @lang.img_url, :size => "180x180" %>
 <% elsif @lang %>
     <h1>Upcoming <%= @lang.name %> Events</h1>
-    <%= image_tag @lang.img_url, :size => "180x180" %>
 <% end %>
 
 <div class="flex-container">
 
 <% if @topic %>
-    <ul>
+    <ul style="margin-top:250px; margin-bottom:290px;">
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -40,7 +38,7 @@
         <% end %>
     </ul>
 <% elsif @lang %>
-    <ul>
+    <ul style="margin-top:250px; margin-bottom:290px;">
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -52,7 +50,7 @@
         <% end %>
     </ul>
 <% else %>
-    <ul>
+    <ul style="margin-top:250px; margin-bottom:290px;">
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>  
