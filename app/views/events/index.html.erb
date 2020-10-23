@@ -6,7 +6,9 @@
 
         <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
 
-        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+        <li><%= link_to 'All Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Topics', :controller => "topics", :action => "index"%>
 
          <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
 
@@ -17,6 +19,7 @@
     </nav>
 
 <body class="languages">
+
 
 <% if @topic && !@lang %>
     <h1><%= @topic.title %> Events</h1>
@@ -29,7 +32,7 @@
 <div class="flex-container">
 
 <% if @topic && !@lang %>
-    <ul style="margin-top:250px; margin-bottom:290px;">
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -42,7 +45,7 @@
     </ul>
 
 <% elsif @topic %>
-    <ul style="margin-top:250px; margin-bottom:290px;">
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -53,7 +56,7 @@
         <% end %>
     </ul>
 <% elsif @lang %>
-    <ul style="margin-top:250px; margin-bottom:290px;">
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -65,7 +68,7 @@
         <% end %>
     </ul>
 <% else %>
-    <ul style="margin-top:250px; margin-bottom:290px;">
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>  
@@ -78,6 +81,8 @@
         <% end %>
     </ul>
 <% end %>
+
+</div>
 
 </div>
 

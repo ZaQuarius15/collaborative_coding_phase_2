@@ -6,7 +6,9 @@
 
         <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
 
-        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+        <li><%= link_to 'All Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Topics', :controller => "topics", :action => "index"%>
 
          <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
 
@@ -19,13 +21,13 @@
 
 <body class="languages"> 
 
-<h1>Programming Languages</h1> 
+<h1>Events by Language</h1> 
 
 <div class="lang-list">
 
 <ul style="margin-top:250px; margin-bottom:290px;">
     <% @languages.sorted_list.each do |lang|%>
-        <li><%= link_to lang.name, language_path(lang) %></li><br>
+        <li id="list", style="margin-right:100px;"><%= link_to lang.name, language_path(lang) %></li><br>
     <% end %>
 </ul>
 

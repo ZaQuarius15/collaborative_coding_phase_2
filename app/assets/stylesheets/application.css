@@ -23,6 +23,13 @@ body{
      font-size: xx-large;
  }
 
+ .field_with_errors{
+    border: 1px solid red;
+    font-family: sans-serif;
+     text-align: center;
+     font-size: medium;
+  }
+
  .flash {
      color :red;
      font-family: sans-serif;

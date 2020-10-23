@@ -1,8 +1,35 @@
 <body class="container languages"> 
-<h1>Programming Topics</h1> 
-<ul>
+
+    <nav>
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'All Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Topics', :controller => "topics", :action => "index"%>
+
+         <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+         <li><%= link_to 'Dashboard', :controller => "welcome", :action => "home"%>
+
+      </ul>
+
+    </nav>
+
+<div style="margin-top:200px; margin-bottom:175px;">
+
+<h1>Events by Topic</h1>
+
+<ul style="columns:3">
     <% @topics.each do |topic|%>
-        <li><%= link_to topic.title, events_path(:topic => topic) %></li><br>
+        <li id="list"><%= link_to topic.title, events_path(:topic => topic) %></li><br>
     <% end %>
 </ul>
+
+<div>
+
 </body>
