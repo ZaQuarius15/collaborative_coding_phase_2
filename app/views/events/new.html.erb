@@ -5,7 +5,7 @@
 
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-        <p style="color:red;"><%= error %></p>
+        <p class="flash"><%= error %></p>
     <% end %>
 <% end %>
 
