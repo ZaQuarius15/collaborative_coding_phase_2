@@ -2,6 +2,8 @@ class Event < ApplicationRecord
     belongs_to :host, :class_name => :User
     belongs_to :lang_topic
     has_many :participants, :class_name => :User
+
+    validates_date :date, on_or_after: lambda { Date.current }, on_or_after_message: "of Meetup cannot be in the past."
     
     attr_reader :language, :topic
 

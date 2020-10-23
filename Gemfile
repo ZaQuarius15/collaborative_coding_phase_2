@@ -60,3 +60,5 @@ gem 'bcrypt'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'validates_timeliness', '~> 5.0.0.beta1'

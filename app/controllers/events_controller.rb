@@ -3,7 +3,12 @@ class EventsController < ApplicationController
     before_action :require_logged_in
      
     def index
-        if params[:topic]
+        if params[:topic] && !params[:language]
+            @events = Event.sort_by_date.select do |e|
+                e.topic == Topic.find(params[:topic])
+            end
+            @topic = Topic.find(params[:topic])
+        elsif params[:topic]
             @events = Event.sort_by_date.select do |e|
                 if e.language == Language.find(params[:language])
                     e.topic == Topic.find(params[:topic])

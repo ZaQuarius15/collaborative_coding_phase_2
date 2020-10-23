@@ -1,0 +1,8 @@
+<body class="container languages"> 
+<h1>Programming Topics</h1> 
+<ul>
+    <% @topics.each do |topic|%>
+        <li><%= link_to topic.title, events_path(:topic => topic) %></li><br>
+    <% end %>
+</ul>
+</body>

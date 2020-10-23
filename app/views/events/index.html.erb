@@ -16,9 +16,11 @@
 
     </nav>
 
-<body class="container languages">
+<body class="languages">
 
-<% if @topic %>
+<% if @topic && !@lang %>
+    <h1><%= @topic.title %> Events</h1>
+<% elsif @topic %>
     <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
 <% elsif @lang %>
     <h1>Upcoming <%= @lang.name %> Events</h1>
@@ -26,7 +28,20 @@
 
 <div class="flex-container">
 
-<% if @topic %>
+<% if @topic && !@lang %>
+    <ul style="margin-top:250px; margin-bottom:290px;">
+        <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>
+            <dt>Location: <%= event.location %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
+            <dt><%= image_tag event.language.img_url, :size => "30x30" %></dt>
+            </dl><br>
+        <% end %>
+        <% end %>
+    </ul>
+
+<% elsif @topic %>
     <ul style="margin-top:250px; margin-bottom:290px;">
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
