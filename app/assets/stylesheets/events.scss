@@ -9,6 +9,10 @@ body.events {
   background-size: cover;
 }
 
+.events h3 {
+  text-align: center;
+}
+
 input {
   width: 40%;
   padding: 12px 20px;
@@ -20,4 +24,33 @@ width: 40%;
 padding: 12px 20px;
 margin: 8px 0;
 box-sizing: border-box;
+}
+
+
+body.event-show {
+  background-image: image-url('teamwork.png');
+  background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: bottom left;
+}
+
+.event-show {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+.event-show a {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+.event-show h1 {
+  margin-top: 5%;
+  margin-bottom: 3;
+  font-size: xx-large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+  text-align: center;
+  color: black;
 }
