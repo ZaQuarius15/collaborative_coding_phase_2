@@ -1,4 +1,20 @@
-<body class="container languages">
+    <nav>
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+      </ul>
+
+    </nav>
+
+<body class="languages">
 
 <% if @topic %>
     <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
@@ -6,12 +22,12 @@
 <% elsif @lang %>
     <h1>Upcoming <%= @lang.name %> Events</h1>
     <%= image_tag @lang.img_url, :size => "180x180" %>
-<% else %>
-    <h1>Upcoming Events</h1>
 <% end %>
 
+<div class="flex-container">
+
 <% if @topic %>
-    <ol>
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -20,9 +36,9 @@
             </dl><br>
         <% end %>
         <% end %>
-    </ol>
+    </ul>
 <% elsif @lang %>
-    <ol>
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>
@@ -32,9 +48,9 @@
             </dl><br>
         <% end %>
         <% end %>
-    </ol>
+    </ul>
 <% else %>
-    <ol>
+    <ul>
         <% @events.each do |event|%>
         <% if event.date >= Date.today %>
             <dl><dt><%= link_to event.title, event_path(event) %></dt>  
@@ -45,7 +61,9 @@
             </dl><br>
         <% end %>
         <% end %>
-    </ol>
+    </ul>
 <% end %>
+
+</div>
 
 </body>

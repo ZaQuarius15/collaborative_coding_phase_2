@@ -41,9 +41,7 @@ topic16 = Topic.create(title: "Arrays")
 topic17 = Topic.create(title: "Data Analysis")
 topic18 = Topic.create(title: "File Handling")
 topic19 = Topic.create(title: "Source Control")
-topic20 = Topic.create(title: "Events")
 topic21 = Topic.create(title: "Polymorphism")
-
 topic22 = Topic.create(title: "Factors")
 topic23 = Topic.create(title: "Vectors")
 topic24 = Topic.create(title: "Matrices")
@@ -90,7 +88,7 @@ LangTopic.create(language_id: lang2.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang2.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang2.id, topic_id: topic18.id)
 LangTopic.create(language_id: lang2.id, topic_id: topic19.id)
-LangTopic.create(language_id: lang2.id, topic_id: topic20.id)
+
 
 LangTopic.create(language_id: lang3.id, topic_id: topic1.id)
 LangTopic.create(language_id: lang3.id, topic_id: topic2.id)
@@ -111,7 +109,7 @@ LangTopic.create(language_id: lang3.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang3.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang3.id, topic_id: topic18.id)
 LangTopic.create(language_id: lang3.id, topic_id: topic19.id)
-LangTopic.create(language_id: lang3.id, topic_id: topic20.id)
+
 LangTopic.create(language_id: lang3.id, topic_id: topic21.id)
 
 LangTopic.create(language_id: lang4.id, topic_id: topic1.id)
@@ -133,7 +131,7 @@ LangTopic.create(language_id: lang4.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang4.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang4.id, topic_id: topic18.id)
 LangTopic.create(language_id: lang4.id, topic_id: topic19.id)
-LangTopic.create(language_id: lang4.id, topic_id: topic20.id)
+
 
 LangTopic.create(language_id: lang5.id, topic_id: topic1.id)
 LangTopic.create(language_id: lang5.id, topic_id: topic2.id)
@@ -154,7 +152,7 @@ LangTopic.create(language_id: lang5.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang5.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang5.id, topic_id: topic18.id)
 LangTopic.create(language_id: lang5.id, topic_id: topic19.id)
-LangTopic.create(language_id: lang5.id, topic_id: topic20.id)
+
 LangTopic.create(language_id: lang5.id, topic_id: topic21.id)
 
 LangTopic.create(language_id: lang6.id, topic_id: topic1.id)
@@ -176,7 +174,7 @@ LangTopic.create(language_id: lang6.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang6.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang6.id, topic_id: topic18.id)
 LangTopic.create(language_id: lang6.id, topic_id: topic19.id)
-LangTopic.create(language_id: lang6.id, topic_id: topic20.id)
+
 LangTopic.create(language_id: lang6.id, topic_id: topic21.id)
 
 LangTopic.create(language_id: lang7.id, topic_id: topic1.id)
@@ -294,7 +292,7 @@ LangTopic.create(language_id: lang12.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang12.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang12.id, topic_id: topic18.id)
 LangTopic.create(language_id: lang12.id, topic_id: topic19.id)
-LangTopic.create(language_id: lang12.id, topic_id: topic20.id)
+L
 
 LangTopic.create(language_id: lang13.id, topic_id: topic1.id)
 LangTopic.create(language_id: lang13.id, topic_id: topic2.id)
@@ -314,7 +312,7 @@ LangTopic.create(language_id: lang13.id, topic_id: topic15.id)
 LangTopic.create(language_id: lang13.id, topic_id: topic16.id)
 LangTopic.create(language_id: lang13.id, topic_id: topic17.id)
 LangTopic.create(language_id: lang13.id, topic_id: topic18.id)
-LangTopic.create(language_id: lang13.id, topic_id: topic20.id)
+L
 
 LangTopic.create(language_id: lang14.id, topic_id: topic1.id)
 LangTopic.create(language_id: lang14.id, topic_id: topic2.id)

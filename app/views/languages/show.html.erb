@@ -1,18 +1,35 @@
-<body class="show-lang">
+    <nav>
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+      </ul>
+
+    </nav>
+
+
+<div class="show-lang">
 
 
 <%= image_tag @language.img_url, :size => "180x180" %>
 
-<h3 style="text-align:right; margin-right: 20px;"><%= @language.description %></h3>
+<h3 style="text-align:center; margin-top:100px;"><%= @language.description %></h3><br>
+<br>
 
 
 <uL>
     <% @language.topics.each do |topic| %>
-        <%= link_to topic.title, events_path(:language => @language, :topic => topic) %><br>
+        <li><%= link_to topic.title, events_path(:language => @language, :topic => topic) %><br><br>
     <% end %>
 </ul>
 
-<br><br>
 <h2 style="text-align: center;"><%= link_to "#{@language.name} Events", events_path(:language => @language) %></h2>
 
-<body>
+</div>
