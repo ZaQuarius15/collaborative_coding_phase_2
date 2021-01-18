@@ -3,7 +3,7 @@ class LangTopic < ApplicationRecord
     belongs_to :topic
     has_many :events
 
-    validates :language_id, uniqueness: { scope: :topic_id }
+    validates :user_id, uniqueness: { scope: :appetizer_id }
 
     attr_reader :display_lt
 

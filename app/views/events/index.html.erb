@@ -22,11 +22,11 @@
 
 
 <% if @topic && !@lang %>
-    <h1><%= @topic.title %> Events</h1>
+    <h1><%= @topic.title %> Meetups</h1>
 <% elsif @topic %>
-    <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
+    <h1><%= @lang.name + " - " + @topic.title %> Meetups</h1>
 <% elsif @lang %>
-    <h1>Upcoming <%= @lang.name %> Events</h1>
+    <h1>Upcoming <%= @lang.name %> Meetups</h1>
 <% end %>
 
 <div class="flex-container">
