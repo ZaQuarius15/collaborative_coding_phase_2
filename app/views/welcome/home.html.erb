@@ -41,9 +41,9 @@
 
 <ul>
     <% if current_user.events_attending.any? %>
-    <% current_user.events_attending.each do |ue| %>
-    <li><%= link_to ue.event.title, event_path(ue.event) %></li><br>
-    <% end %>
+        <% current_user.events_attending.each do |ue| %>
+            <li><%= link_to ue.event.title, event_path(ue.event) %></li><br>
+        <% end %>
     <% end %>
 </ul>
 
@@ -57,9 +57,9 @@
 
 <ul>
     <% if current_user.events_hosting.any? %>
-    <% current_user.events_hosting.each do |event| %>
-    <li><%= link_to event.title, event_path(event) %></li><br>
-    <% end %>
+        <% current_user.events_hosting.each do |event| %>
+            <li><%= link_to event.title, event_path(event) %></li><br>
+        <% end %>
     <% end %>
 </ul>
 
