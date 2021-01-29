@@ -1,0 +1,62 @@
+    <nav>
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'Events', :controller => "events", :action => "index"%>
+
+        <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+        <li><%= link_to 'Dashboard', :controller => "welcome", :action => "home"%>
+
+      </ul>
+
+    </nav>
+
+
+<body class="event-show">
+
+<h1><%= @event.title %><br></h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style="color:red;"><%= error %></p>
+    <% end %>
+<% end %>
+
+<% if flash[:success] %>
+    <% flash[:success].each do |success| %>
+        <p style="color:green;"><%= success %></p>
+    <% end %>
+<% end %>
+
+
+<%= link_to @language.name, language_path(@language) %><br>
+
+<%= @topic.title %><br>
+<%= @event.location %><br>
+<%= @event.display_date %><br>
+<%= @event.time %><br>
+<%= @host.name %><br>
+
+<% if !current_user.events_hosting.include?(@event) %>
+  <%= button_to 'register', join_path(@event), method:'put'%><br>
+<% end %><br>
+
+<% if current_user.events_attending.include?(@user_event) %>
+    <%= button_to 'cancel registeration', cancel_join_path(@event), method:'delete'%><br>
+<% end %><br>
+
+<% if current_user.events_hosting.include?(@event) %>
+  <%= button_to "update event", edit_event_path, method:'get'%><br>
+  <%= button_to "delete", {:controller => :events,
+      :action => 'destroy', :id => @event.id }, :method => :delete %>
+
+<% end %><br>
+
+There is <%= pluralize( @event.attendees_count, 'person') %> registered for this event!
+
+</body>

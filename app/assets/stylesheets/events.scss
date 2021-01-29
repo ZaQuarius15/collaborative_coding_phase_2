@@ -1,3 +1,56 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+body.events {
+  background-image: image-url('ideas.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+.events h3 {
+  text-align: center;
+}
+
+input {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+select {
+width: 40%;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+}
+
+
+body.event-show {
+  background-image: image-url('teamwork.png');
+  background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: bottom left;
+}
+
+.event-show {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+.event-show a {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.event-show h1 {
+  margin-top: 5%;
+  margin-bottom: 3;
+  font-size: xx-large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+  text-align: center;
+  color: black;
+}

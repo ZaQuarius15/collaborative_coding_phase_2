@@ -1,19 +1,37 @@
-<h1>Create a New Event!</h1>
+ 
+<body class="container events"> 
 
-<h4><em>Ready to host an event of your own? That's right you are!</em></h4>
+<h3 style="color:white;text-shadow: 2px 2px #000;"><em>Ready to host an event of your own?</em></h3>
 
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-        <p style="color:red"><%= error %></p>
+        <p style="color:red;"><%= error %></p>
     <% end %>
 <% end %>
 
+<div class = "form">
+
 <%= form_for @event do |f| %>
-    <%= f.label :language %>
-    <%= f.collection_select :lang_topic_id, @lang_topics, :id, :display_lt %>
-
-    
 
 
-    <%= f.submit %>
+    <h2 style="color:white;text-shadow: 2px 2px #000;" >List Your Meetup</h2><br>
+
+    <%= f.text_field :title, placeholder: 'Enter Title' %><br><br>
+
+    <%= f.collection_select :lang_topic_id, @lang_topics.sorted_list, :id, :display_lt %><br><br><br>
+
+    <%= f.text_field :location, placeholder: 'Location' %><br><br>
+
+    <%= f.date_field :date %><br><br>
+
+    <%= f.select :time, options_for_select(@times) %><br><br><br></p>>
+
+
+    <%= f.submit 'Create Event' %><br><br>
+
 <% end %>
+
+
+<div class = "form">
+
+</body>

@@ -52,3 +52,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'faker'
+
+gem 'bcrypt'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'validates_timeliness', '~> 5.0.0.beta1'

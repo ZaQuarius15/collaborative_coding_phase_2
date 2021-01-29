@@ -1,0 +1,52 @@
+body.welcome {
+    background-image: image-url('keyboard.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+body h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.column-wrapper a {
+font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: darkolivegreen;    
+text-shadow: 2px 2px  beige;
+}
+
+.column-wrapper ul {
+    list-style-type:none;
+}
+
+.column-wrapper {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 50%;
+}
+
+div.columns {
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.column1 {
+    height: 100px;
+  }
+  
+.column2 {
+    height: 100px;
+  }
+
+div.row {
+    display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  }
+ 

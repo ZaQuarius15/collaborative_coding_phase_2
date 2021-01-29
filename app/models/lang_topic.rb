@@ -3,6 +3,8 @@ class LangTopic < ApplicationRecord
     belongs_to :topic
     has_many :events
 
+    validates :language_id, uniqueness: { scope: :topic_id }
+
     attr_reader :display_lt
 
     def initilaize
@@ -13,4 +15,10 @@ class LangTopic < ApplicationRecord
     def display_lt
         self.language.name.to_s + " - " + self.topic.title.to_s
     end
+
+
+    def self.sorted_list
+        all.sort {|a, b| a.display_lt <=> b.display_lt}
+    end
+
 end

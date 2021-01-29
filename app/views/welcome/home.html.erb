@@ -1,0 +1,74 @@
+    <nav>
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+      </ul>
+
+    </nav>
+
+
+<body class="welcome">
+
+<div class="dashboard">
+
+<% if flash[:notice] %>
+    <% flash[:notice].each do |notice| %>
+        <p style="color:red;"><%= notice %></p>
+    <% end %>
+<% end %>
+
+<h3 style="margin-left:10%">Welcome back, <%= current_user[:name] %>!</h3>
+
+<div class="column-wrapper">
+
+<div class="row">
+
+<div class="columns">
+
+<div class="column1">
+
+<h4>You have <%= pluralize( current_user.events_attending.count, 'upcoming event') %>.</h4>
+
+<ul>
+    <% if current_user.events_attending.any? %>
+    <% current_user.events_attending.each do |ue| %>
+    <li><%= link_to ue.event.title, event_path(ue.event) %></li><br>
+    <% end %>
+    <% end %>
+</ul>
+
+</div>
+
+</div>
+
+<div class="column2">
+
+<h4>Currently hosting <%= pluralize( current_user.events_hosting.count, 'upcoming event') %>.</h4>
+
+<ul>
+    <% if current_user.events_hosting.any? %>
+    <% current_user.events_hosting.each do |event| %>
+    <li><%= link_to event.title, event_path(event) %></li><br>
+    <% end %>
+    <% end %>
+</ul>
+
+</div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+</body>

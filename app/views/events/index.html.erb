@@ -1,7 +1,84 @@
-<h1>All Events</h1>
+    <nav>
 
-<ul>
-    <% @events.each do |event|%>
-        <li><%= event.title %></li>
-    <% end %>
-</ul>
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+         <li><%= link_to 'Dashboard', :controller => "welcome", :action => "home"%>
+
+      </ul>
+
+    </nav>
+
+<body class="languages">
+
+<% if @topic && !@lang %>
+    <h1><%= @topic.title %> Events</h1>
+<% elsif @topic %>
+    <h1><%= @lang.name + " - " + @topic.title %> Events</h1>
+<% elsif @lang %>
+    <h1>Upcoming <%= @lang.name %> Events</h1>
+<% end %>
+
+<div class="flex-container">
+
+<% if @topic && !@lang %>
+    <ul style="margin-top:250px; margin-bottom:290px;">
+        <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>
+            <dt>Location: <%= event.location %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
+            <dt><%= image_tag event.language.img_url, :size => "30x30" %></dt>
+            </dl><br>
+        <% end %>
+        <% end %>
+    </ul>
+
+<% elsif @topic %>
+    <ul style="margin-top:250px; margin-bottom:290px;">
+        <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>
+            <dt>Location: <%= event.location %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
+            </dl><br>
+        <% end %>
+        <% end %>
+    </ul>
+<% elsif @lang %>
+    <ul style="margin-top:250px; margin-bottom:290px;">
+        <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>
+            <dt><%= event.topic.title %></dt>
+            <dt>Location: <%= event.location %></dt>
+            <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
+            </dl><br>
+        <% end %>
+        <% end %>
+    </ul>
+<% else %>
+    <ul style="margin-top:250px; margin-bottom:290px;">
+        <% @events.each do |event|%>
+        <% if event.date >= Date.today %>
+            <dl><dt><%= link_to event.title, event_path(event) %></dt>  
+                <dt><%= event.language.name %> - <%= event.topic.title %></dt>
+                <dt>Location: <%= event.location %></dt>
+                <dt>Date: <%= event.display_date %> Time: <%= event.time %></dt>
+                <dt><%= image_tag event.language.img_url, :size => "30x30" %></dt>
+            </dl><br>
+        <% end %>
+        <% end %>
+    </ul>
+<% end %>
+
+</div>
+
+</body>

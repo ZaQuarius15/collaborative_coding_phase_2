@@ -1,0 +1,32 @@
+<body class="sign-in">
+
+<h1>Coding Collective</h1>
+
+<h2 style="font-size:x-large">Sign-in</h2>
+
+<div class = "flash">
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+<% end %>
+
+</div>
+
+<div class = "form">
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+
+  <%= text_field_tag :name, "", :placeholder => "Name" %><br><br>
+  <%= password_field_tag :password, "", :placeholder => "Password" %><br><br>
+  <%=submit_tag 'log in'%>
+
+<% end %>
+
+</div>
+
+<h4> -or- </h4>
+<%= link_to "create new profile", "/users/new" %><br><br>
+
+</div>

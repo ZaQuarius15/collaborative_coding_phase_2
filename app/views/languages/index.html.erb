@@ -1,0 +1,34 @@
+    <nav>
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create an Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'View Events', :controller => "events", :action => "index"%>
+
+         <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+         <li><%= link_to 'Dashboard', :controller => "welcome", :action => "home"%>
+
+      </ul>
+
+    </nav>
+
+
+<body class="languages"> 
+
+<h1>Programming Languages</h1> 
+
+<div class="lang-list">
+
+<ul style="margin-top:250px; margin-bottom:290px;">
+    <% @languages.sorted_list.each do |lang|%>
+        <li><%= link_to lang.name, language_path(lang) %></li><br>
+    <% end %>
+</ul>
+
+</div>
+
+</body>

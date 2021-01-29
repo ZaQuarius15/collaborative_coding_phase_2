@@ -1,3 +1,97 @@
 // Place all the styles related to the Languages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+body.languages {
+    background-image: image-url('laptopcoffee.jpg'); 
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+  }
+
+.languages h1 {
+  color:darkolivegreen;text-shadow: 2px 2px beige; 
+  text-align: right;
+  margin-top: 200px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+}
+
+.flex-container {
+  display: flex, center;
+  margin-top: 300px;
+  margin-bottom: 410px;
+}
+
+.flex-container > ul {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  font-size: large;
+  text-align: center;
+  gap: none;
+  list-style-type:none; 
+}
+
+body.languages ul {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+body.languages ol {
+  column-count: 3;
+  text-align: right;
+  gap: none;
+    list-style-type:none; 
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-bottom: 300px;
+}
+
+body.show-lang {
+  background-color: aliceblue;
+  color: darkolivegreen;
+}
+
+.languages img{
+  overflow: auto;
+}
+
+.show-lang img{
+  overflow: auto;
+  float: left;
+}
+
+.show-lang ul {
+  column-count: 3;
+  font-size: x-large;
+  text-align: right;
+  gap: none;
+  list-style-type:none; 
+  margin-bottom: 150px;
+  margin-right: 150px;
+}
+
+.show-lang a {
+  font-weight: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ color: darkolivegreen;    
+ text-shadow: 2px 2px  beige;
+}
+
+.lang-list ul {
+  column-count: 5;
+  font-size: x-large;
+  text-align: right;
+  gap: none;
+  list-style-type:none; 
+  margin-bottom: 175px;
+}
+
+.lang-list a {
+  font-weight: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ color: darkolivegreen;    
+ text-shadow: 2px 2px  beige;
+}
