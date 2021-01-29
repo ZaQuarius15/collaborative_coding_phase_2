@@ -2,13 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
 body.languages {
     background-image: image-url('laptopcoffee.jpg'); 
     background-repeat: no-repeat;
-    background-position: fixed;
     background-size: cover;
-  }
+    }
 
 .languages h1 {
   color:darkolivegreen;text-shadow: 2px 2px beige; 

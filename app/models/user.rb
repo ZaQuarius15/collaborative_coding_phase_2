@@ -9,7 +9,6 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :name, presence: true
-    validates :bio, presence: true
 
     def events_attending
         UserEvent.all.select {|ue| ue.participant_id == self.id}
