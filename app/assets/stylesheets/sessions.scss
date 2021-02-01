@@ -3,12 +3,14 @@ body.sign-in {
     background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom left;
+  background-size: 50vh;
 }
 
 .sign-in {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
+    margin-top: 20vh;
 }
 
 .sign-in a {
@@ -27,6 +29,5 @@ body.sign-in {
 }
 
 .form{
-    margin-top: 20vh;
     align-self: center;
 }
