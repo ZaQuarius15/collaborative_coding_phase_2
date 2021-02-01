@@ -17,17 +17,20 @@
     </nav>
 
 
-<body class="languages"> 
+<body class='languages'> 
 
-<h1>Programming Languages</h1> 
+<div style="margin-top:40vh;">
+<h1>Events by Language</h1> 
 
 <div class="lang-list">
 
-<ul style="margin-top:250px; margin-bottom:290px;">
+<ul>
     <% @languages.sorted_list.each do |lang|%>
         <li><%= link_to lang.name, language_path(lang) %></li><br>
     <% end %>
 </ul>
+
+</div>
 
 </div>
 

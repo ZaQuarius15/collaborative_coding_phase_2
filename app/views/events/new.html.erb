@@ -1,5 +1,7 @@
  
-<body class="container events"> 
+<body class="events"> 
+
+<div class="form" style="background-color: rgba(52, 52, 52, 0.8)">
 
 <h3 style="color:white;text-shadow: 2px 2px #000;"><em>Ready to host an event of your own?</em></h3>
 
@@ -8,8 +10,6 @@
         <p style="color:red;"><%= error %></p>
     <% end %>
 <% end %>
-
-<div class = "form">
 
 <%= form_for @event do |f| %>
 
@@ -32,6 +32,6 @@
 <% end %>
 
 
-<div class = "form">
+</div>
 
 </body>
