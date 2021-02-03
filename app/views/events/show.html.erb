@@ -36,11 +36,11 @@
 
 <%= link_to @language.name, language_path(@language) %><br>
 
-<%= @topic.title %><br>
-<%= @event.location %><br>
+Topic: <%= @topic.title %><br>
+Location: <%= @event.location %><br>
 <%= @event.display_date %><br>
 <%= @event.time %><br>
-<%= @host.name %><br>
+<em>Hosted by: <%= @host.name %><br></em>
 
 <% if !current_user.events_hosting.include?(@event) %>
   <%= button_to 'register', join_path(@event), method:'put'%><br>
