@@ -6,7 +6,7 @@
 
 <h4>Getting Started</h4>
 <p>After cloning down the repo, run the following commands:</p><br/>
-```bundle update```
+`bundle update`
 ```bundle install```
 
 <p>Next, migrate the database and add seed data:</p><br/>
