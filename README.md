@@ -6,12 +6,12 @@
 
 <h4>Getting Started</h4>
 <p>After cloning down the repo, run the following commands:</p><br/>
-`bundle update`
-```bundle install```
+<p>bundle update</p>
+<p>bundle install</p>
 
 <p>Next, migrate the database and add seed data:</p><br/>
-<span>rails db:migrate</span>
-<span>rails db:seed</span>
+<p>rails db:migrate</p>
+<p>rails db:seed</p>
 
 <p>View at <a href="localhost:3000"><a>.</p>
 
