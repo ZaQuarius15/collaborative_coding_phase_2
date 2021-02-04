@@ -13,7 +13,7 @@
 <p>rails db:migrate</p>
 <p>rails db:seed</p><br/>
 
-<p>View at [](localhost:3000).</p>
+View at [](localhost:3000).
 
 <p>All contributions are welcome!</p>
-<p>_Thank you!_</p>
+_Thank you!_
