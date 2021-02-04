@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
   def create
     user = User.all.find_by(:name => params[:name])
       if user && user.authenticate(params[:password])
@@ -22,7 +19,7 @@ class SessionsController < ApplicationController
 
 
 
-
+# for incorporating omniauth in future
     # skip_before_action :verify_authenticity_token, only: :create
 
     # def create

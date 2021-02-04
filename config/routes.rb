@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'welcome', to: 'welcome#home'
 
+  get 'about', to: 'welcome#about'
+
   get 'sessions', to: 'sessions#destroy'
 
   put 'event/:id/join', to: 'events#join', as: 'join'

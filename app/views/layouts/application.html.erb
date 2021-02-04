@@ -11,6 +11,27 @@
 
   <body>
 
+      <nav>  
+
+      <ul>
+
+        <li><%= link_to "Log Out", :controller=> "sessions", :action=> "destroy" %>
+
+        <li><%= link_to 'Create Event', :controller => "events", :action => "new"%>
+
+        <li><%= link_to 'Events', :controller => "events", :action => "index"%>
+
+        <li><%= link_to 'Languages', :controller => "languages", :action => "index"%>
+
+        <li><%= link_to 'Dashboard', :controller => "welcome", :action => "home"%>
+
+        <li><%= link_to 'About', :controller => "welcome", :action => "about"%>
+
+      </ul>
+
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
